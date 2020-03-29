@@ -1,0 +1,11 @@
+.logo {
+    background: #7452EB;
+    height: 200px;
+    width: 200px;
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
+
+.logo-font {
+    font-size: 150px;
+}

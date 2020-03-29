@@ -1,0 +1,17 @@
+/* --- Importing google fonts --- */
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap');
+
+/* --- Application components design --- */
+@import url('components/button.css');
+@import url('components/logo.css');
+@import url('components/icon.css');
+
+/* --- Fonts --- */
+body {
+    font-family:"Roboto", "Helvetica", "sans-serif";
+    color: #7452EB;
+}
+
+h1, h2, h3 {
+    font-family: "Pacifico","Helvetica", "sans-serif" ;
+}

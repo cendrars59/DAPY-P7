@@ -1,0 +1,8 @@
+.btn-submit {
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 10px 15px;
+    background: #7452EB;
+}
