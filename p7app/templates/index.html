@@ -10,24 +10,28 @@
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <div id="main">
-        <div id="header" class="card" >
-            <div id="logo" class="logo">
-                <H1><i class="fas fa-user-astronaut logo-font"></i></H1>
+    <div id="container">
+        <div id="header">
+            <div id="div-logo">
+                <i id="logo" class="fas fa-user-astronaut logo-font"></i>
             </div>
-            <div id="punchline">
-                <H1>Vers l'infini et au delà !</H1>
+            <div id="div-punchline" class="div-header">
+                <h1 id="punchline">Vers l'infini et au delà!</h1>
             </div>
         </div>
         <div id="formular" class="card" >
-            <p>Form</p>
-            <form>
-                <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1"
-                              placeholder="Entrez votre question ici"  rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-submit">Submit</button>
-            </form>
+            <div id="formular-intro"   >
+                <h2>Que voudrais tu savoir ?</h2>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                              placeholder="Entre ta question ici"  rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </form>
+            </div>
         </div>
         <div id="google-results" class="card">
             <p>google results</p>
@@ -39,19 +43,30 @@
         <div id="story" class="card">
             <p>Grand Pa story</p>
         </div>
-        <div id="footer" class="card">
-            <div id="firstN">Cyril</div>
-            <div id="lastN">Leroux</div>
-            <div id="github" class="icon"   >
-                <a href="https://github.com/cendrars59/DAPY-P7">
-                    <i class="fab fa-github-square icon"></i>
-                </a>
-            </div>
-            <div id="social" align="right">
-                <a href="https://twitter.com/Cendrars_59">
-                    <i class="fab fa-twitter-square icon"></i>
-                </a>
-            </div>
+        <div id="footer">
+                <ul class="list_inline">
+                    <div id="div-li-footer">
+                        <li>
+                            <h3>Cyril Leroux</h3>
+                        </li>
+                        <li>
+                            <a href="https://github.com/cendrars59/DAPY-P7">
+                                <i class="fab fa-github-square icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/Cendrars_59">
+                                <i class="fab fa-twitter-square icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/cyleroux/">
+                                <i class="fab fa-linkedin icon"></i>
+                            </a>
+                        </li>
+                    </div>
+
+                </ul>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

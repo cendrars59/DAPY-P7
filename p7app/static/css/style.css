@@ -3,9 +3,12 @@
 
 /* --- Application components design --- */
 @import url('components/button.css');
-@import url('components/logo.css');
 @import url('components/icon.css');
 @import url('components/card.css');
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/logo.css');
+@import url('components/formular.css');
 
 /* --- Fonts --- */
 body {
@@ -15,4 +18,14 @@ body {
 
 h1, h2, h3 {
     font-family: "Pacifico","Helvetica", "sans-serif" ;
+}
+
+.list_inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list_inline li {
+    display: inline-block;
+    width: 15%;
 }
