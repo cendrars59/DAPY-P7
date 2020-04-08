@@ -1,10 +1,11 @@
 from flask_testing import LiveServerTestCase
 from selenium import webdriver
 import selenium.webdriver.support.ui as ui
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from flask import url_for
 from .nominal_data_set import data
-from .. import app
+from p7app import app
 
 
 class TestUser(LiveServerTestCase):
@@ -15,6 +16,8 @@ class TestUser(LiveServerTestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
+        # Setting the wait parameter
+        self.wait = ui.WebDriverWait(self.driver, 2000)
 
     def enter_text_field(self, selector, text):
         # Selecting the text area.
@@ -32,7 +35,7 @@ class TestUser(LiveServerTestCase):
 
     def submits_form(self):
         # Entering request text to submit
-        self.enter_text_field('#request', data['input'])
+        self.enter_text_field('#user_request', data['input'])
         # Clicking on submission button
         self.get_el('#submit').click()
 
@@ -42,7 +45,6 @@ class TestUser(LiveServerTestCase):
         # Checking that the URL is as expected.
         assert self.driver.current_url == 'http://localhost:5000/'
         self.submits_form()
-        # Waiting for the redirection is ended.
-        delay = 5 #seconds
-        #self.wait.until(lambda driver: '?' in self.driver.current_url)
-        #assert self.driver.current_url == '/result'
+        # Waiting for the redirection is ended by verifying that an element into result page is displayed.
+        self.wait.until(lambda driver: self.get_el('#result_map'))
+        assert self.driver.current_url == 'http://127.0.0.1:5000/result/Salut%20GrandPy%20%21%20%0D%0A%20%20%20%20%20Est-ce%20que%20tu%20connais%20l%27adresse%20d%27OpenClassrooms%20%3F'

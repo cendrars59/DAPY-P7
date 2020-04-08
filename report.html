@@ -243,7 +243,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 07-Apr-2020 at 21:38:42 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
+    <p>Report generated on 08-Apr-2020 at 02:16:08 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -259,8 +259,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>3.6.9</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 7.80 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 7.00 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -271,15 +271,15 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">tests_suite/nominal/test_user_nominal.py::TestUser::test_user_nominal</td>
-          <td class="col-duration">7.66</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">p7app/tests/tests_suite/nominal/test_user_nominal.py::TestUser::test_user_nominal</td>
+          <td class="col-duration">4.13</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/> * Serving Flask app &quot;p7app.views&quot; (lazy loading)
+            <div class="log">self = &lt;p7app.tests.tests_suite.nominal.test_user_nominal.TestUser testMethod=test_user_nominal&gt;<br/><br/>    def test_user_nominal(self):<br/>        # Opening browser and set Server URL as entry point.<br/>        self.driver.get(self.get_server_url())<br/>        # Checking that the URL is as expected.<br/>        assert self.driver.current_url == &#x27;http://localhost:5000/&#x27;<br/>        self.submits_form()<br/>        # Waiting for the redirection is ended by verifying that an element into result page is displayed.<br/>        self.wait.until(lambda driver: self.get_el(&#x27;#result_map&#x27;))<br/>&gt;       assert self.driver.current_url == &#x27;http://127.0.0.1:5000/result/Salut%20GrandPy%20%21%20%0D%0A%20%20%20%20%20Est-ce%20que%20tu%20connais%20l%27adresse%20d%27OpenClassrooms%20%3F&#x27;<br/><span class="error">E       AssertionError: assert &#x27;http://local...A%20%20%20%20&#x27; == &#x27;http://127.0...ssrooms%20%3F&#x27;</span><br/><span class="error">E         - http://127.0.0.1:5000/result/Salut%20GrandPy%20%21%20%0D%0A%20%20%20%20%20Est-ce%20que%20tu%20connais%20l%27adresse%20d%27OpenClassrooms%20%3F</span><br/><span class="error">E         ?        ^^^^^^^^^</span><br/><span class="error">E         + http://localhost:5000/result/%0D%0A%20%20%20%20%20Salut%20GrandPy%20%21%20%0D%0A%20%20%20%20%20Est-ce%20que%20tu%20connais%20l%27adresse%20d%27OpenClassrooms%20%3F%0D%0A%20%20%20%20</span><br/><span class="error">E         ?        ^^^^^^^^^             +++++++++++++++++++++                                                                                                                 ++++++++++++++++++</span><br/><br/>p7app/tests/tests_suite/nominal/test_user_nominal.py:50: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/> * Serving Flask app &quot;p7app.views&quot; (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
