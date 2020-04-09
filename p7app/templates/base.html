@@ -21,12 +21,22 @@
                 <h1 id="punchline">Vers l'infini et au delà!</h1>
             </div>
         </div>
-       {% block form %}
-        {% endblock %}
-        {% block map %}
-        {% endblock %}
-         {% block story %}
-        {% endblock %}
+        <div id="formular" class="card" >
+            <div id="formular-intro"   >
+                <h2>Que voudrais tu savoir ?</h2>
+            </div>
+            <div>
+                <form action="#" method="post" >
+                    <div class="form-group">
+                        <textarea class="form-control" id="user_request"
+                              placeholder="Entre ta question ici"  rows="3" name="user_request_name">{{ u_request }}</textarea>
+                    </div>
+                    <div id="div-submit-button">
+                        <button type="submit"  id="submit"   class="btn btn-submit">On y va !</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div id="footer">
             <ul class="list_inline">
@@ -52,8 +62,6 @@
                 </div>
             </ul>
         </div>
-
-
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
