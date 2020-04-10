@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         user_request = request.form["user_request_name"]
-        return render_template('index.html', u_request=user_request)
+        return render_template('index.html')
     else:
         return render_template('index.html')
 
