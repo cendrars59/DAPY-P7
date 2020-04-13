@@ -9,6 +9,9 @@
 @import url('components/footer.css');
 @import url('components/logo.css');
 @import url('components/formular.css');
+@import url('components/dialog.css');
+
+
 
 /* --- Fonts --- */
 body {
@@ -16,7 +19,7 @@ body {
     color: #7452EB;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
     font-family: "Pacifico","Helvetica", "sans-serif" ;
 }
 
@@ -29,3 +32,10 @@ h1, h2, h3 {
     display: inline-block;
     width: 15%;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+

@@ -2,9 +2,22 @@
     padding-bottom: 2%;
 }
 
-#div-submit-button {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#div-formular {
+    margin-left: 10%;
+    padding: 2% 2% 2% 2%;
+
 }
 
+#submit {
+    display: inline-block;
+}
+
+#user_request {
+    width: 60%;
+    border: #7452EB solid;
+    display: inline-block;
+}
+
+#div-formular {
+    display: inline-block;
+}

@@ -15,7 +15,7 @@ class TestUser(LiveServerTestCase):
         return app
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         # Setting the wait parameter
         self.wait = ui.WebDriverWait(self.driver, 2000)
 
@@ -46,5 +46,5 @@ class TestUser(LiveServerTestCase):
         assert self.driver.current_url == 'http://localhost:5000/'
         self.submits_form()
         # Waiting for the redirection is ended by verifying that an element into result page is displayed.
-        #self.wait.until(lambda driver: self.get_el('#result_map'))
-        #assert self.driver.current_url == 'http://127.0.0.1:5000/#'
+        self.wait.until(lambda driver: self.get_el('.gmnoscreen'))
+        assert self.driver.current_url == 'http://localhost:5000/home'
