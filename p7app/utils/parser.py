@@ -1,34 +1,33 @@
 # coding: utf8
 
 
-def request_parser(incoming_request):
+def request_parser(incoming_message):
     """
     Function to retrieve the address from a raw message.
     Is considered as address any list of string between the string address and ?
     :param incoming_request:
     :return: a string value
     """
-    words_in_incoming = incoming_request.split(" ")
-    print(words_in_incoming)
+    words_in_incoming = incoming_message["messages"]["raw_message"].split(" ")
     try:
        address_index = words_in_incoming.index("adresse")
-       print(address_index)
        temp_address = words_in_incoming[address_index + 1:]
-       print(temp_address)
        try:
            question_mark_index = temp_address.index("?")
-           print(question_mark_index)
            address_list = temp_address[:question_mark_index]
-           address = ""
-           for word in  address_list:
-               address+= word+" "
-           print(address)
-           return address
+           #The ? can not be just after the word adresse
+           if question_mark_index > address_index + 1:
+               for word in  address_list:
+                   incoming_message["messages"]["parsed_message"] += word+" "
+                   incoming_message["status"] = "OK"
+           else:
+               incoming_message["status"] = 'NOK'
+               incoming_message["errors"]["parser"] = True
        except ValueError:
-           question_mark_index = None
-           return "Parser error"
+           incoming_message["status"] = 'NOK'
+           incoming_message["errors"]["parser"] = True
     except ValueError:
-        address_index = None
-        return "Parser error"
+        incoming_message["status"] = 'NOK'
+        incoming_message["errors"]["parser"] = True
 
-
+    return incoming_message

@@ -6,7 +6,9 @@ from flask_googlemaps import GoogleMaps
 import requests
 from .utils.google import *
 from .utils.parser import *
+
 app = Flask(__name__)
+
 
 @app.route('/')
 @app.route('/home/')
@@ -18,21 +20,26 @@ def home():
 @app.route('/results', methods=["POST"])
 def results():
     answer = {
-        "message": {
+        "messages": {
             "raw_message": request.form["user_request_name"],
-            "parsed_message": None
+            "parsed_message": ""
         },
         "google": None,
         "wikimedia": None,
-        "error": {
-            "has-error": None,
-            "error_type": None
+        "status": None,
+        "errors": {
+            "parser": None,
+            "searchAPI": None,
+            "resultsAPI": None,
+            "wikiAPI": None
         }
     }
 
-    answer["message"]["parsed_message"] = request_parser(answer["message"]["raw_message"])
-    answer["google"] = get_data_from_google(answer["message"]["parsed_message"])
-    return answer
+    request_parser(answer)
+    if answer["status"] == "OK":
+        get_data_from_google(answer)
+
+    return jsonify(answer)
 
 
 if __name__ == "__main__":
