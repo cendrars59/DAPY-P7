@@ -6,6 +6,7 @@ from flask_googlemaps import GoogleMaps
 import requests
 from .utils.google import *
 from .utils.parser import *
+from .utils.wikimedia import *
 
 app = Flask(__name__)
 
@@ -36,8 +37,11 @@ def results():
     }
 
     request_parser(answer)
+    # If data have been received from Google maps API
     if answer["status"] == "OK":
         get_data_from_google(answer)
+        if answer["status"] == "OK":
+            get_data_from_wiki_media(answer)
 
     return jsonify(answer)
 
