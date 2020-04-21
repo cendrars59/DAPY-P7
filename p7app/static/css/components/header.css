@@ -6,7 +6,9 @@
 
 #1 {
     display: block;
-    height: 10%;
+    height: 15%;
+    min-height: 15%;
+    margin-top: 2%;
 }
 
 

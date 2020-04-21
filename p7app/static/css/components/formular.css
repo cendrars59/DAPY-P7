@@ -1,8 +1,19 @@
 #div-formular {
-    display: block;
     height: 100%;
 }
 #3 {
-    display: block;
     height: 35%;
+}
+
+#user_request {
+    width: 100%;
+    padding-top: 1%;
+}
+
+#formular{
+    padding-top: 2%;
+}
+
+#div-submit {
+    padding-top: 2%;
 }

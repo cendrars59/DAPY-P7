@@ -8,7 +8,8 @@ def request_parser(incoming_message):
     :param incoming_message: of type dictionary
     :return: a string value
     """
-    words_in_incoming = incoming_message["messages"]["raw_message"].split(" ")
+
+    words_in_incoming = incoming_message["messages"]["raw_message"].lower().split(" ")
     try:
         address_index = words_in_incoming.index("adresse")
         temp_address = words_in_incoming[address_index + 1:]

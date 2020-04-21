@@ -9,6 +9,7 @@
 @import url('components/logo.css');
 @import url('components/formular.css');
 @import url('components/dialog.css');
+@import url('components/card.css');
 
 
 
@@ -16,6 +17,7 @@
 body {
     font-family:"Roboto", "Helvetica", "sans-serif";
     color: #7452EB;
+    position: relative;
 }
 
 h1, h2, h3, p {
@@ -39,4 +41,8 @@ p { margin-top: 20px;}
 .container {
     height: 100%;
     margin: 0 auto;
+}
+
+.row {
+    border: none;
 }

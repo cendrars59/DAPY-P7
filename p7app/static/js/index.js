@@ -83,10 +83,9 @@ formular.addEventListener('submit', function(event) {
                     }
 
                 }, 5000);
+                document.getElementById( 'dialog' ).scrollIntoView(false);
                 answerDiv.appendChild(addByGrandPa);
-                /// JQUERY feature to manage the scroll down
-                let height = document.getElementById("dialog").offsetHeight;
-                $("#dialog").animate({scrollTop: height});
+
 
 
 
