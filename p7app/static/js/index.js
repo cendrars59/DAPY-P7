@@ -61,6 +61,24 @@ formular.addEventListener('submit', function(event) {
                     if (response["status"] === "OK") {
                         addByGrandPa.innerHTML = "Grand pa: Voilà l'adresse que tu cherches " + response["google"]["result"]["adr_address"];
                         initMap(response["google"]["result"]["geometry"]["location"]["lat"], response["google"]["result"]["geometry"]["location"]["lng"]);
+                        answerDiv.appendChild(addByGrandPa);
+                        let IntroStoryGrandPa = document.createElement("p");
+                        /// Manage the case when there are results from Media Wiki
+                        if(response["errors"]["wikiAPI"] === true) {
+                            IntroStoryGrandPa.innerHTML = "Je ne connais pas trop ce coin. C'était dangereux à l'époque";
+                            answerDiv.appendChild(IntroStoryGrandPa);
+                            } else {
+                            /// Manage the case there are no results from Media Wiki
+                            IntroStoryGrandPa.innerHTML = "Je trainais souvent dans le coin quand j'étais un petit gamin.Je pourrais te raconter que";
+                            answerDiv.appendChild(IntroStoryGrandPa);
+                            let storyGrandPa = document.createElement("p");
+                            storyGrandPa.innerHTML = response["wikimedia"]["extract"];
+                            answerDiv.appendChild(storyGrandPa);'index'
+                            let urlGrandPa = document.createElement("p");
+                            urlGrandPa.innerHTML = "Tu peux en savoir plus en visitant ce lien en cliquant <a href=\"" +response["wikimedia"]["fullurl"]+"\">En savoir plus sur Wikipedia</a>";
+                            answerDiv.appendChild(urlGrandPa);
+                        }
+
                     /// Managing errors and display an answer accordingly
                     } else {
 
@@ -77,14 +95,14 @@ formular.addEventListener('submit', function(event) {
                         } else if (response["errors"]["resultsAPI"] === true){
                             addByGrandPa.innerHTML = "Grand pa: Je suis vieux, je perd la mémoire de temps en temps ";
                         }
-
+                        answerDiv.appendChild(addByGrandPa);
 
 
                     }
 
                 }, 5000);
                 document.getElementById( 'dialog' ).scrollIntoView(false);
-                answerDiv.appendChild(addByGrandPa);
+
 
 
 

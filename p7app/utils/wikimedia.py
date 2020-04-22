@@ -35,7 +35,6 @@ def get_data_from_wiki_media(user_request):
             # we set as answer only the first result if it exists
             if len(list_of_pages) != 0:
                 user_request["wikimedia"] = incoming_request.json()["query"]["pages"][list_of_pages[0]]
-                print(user_request["wikimedia"])
             else:
                 user_request["status"] = "ZERO_RESULTS"
                 user_request["errors"]["wikiAPI"] = True
