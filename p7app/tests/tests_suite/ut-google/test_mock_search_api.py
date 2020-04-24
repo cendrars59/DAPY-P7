@@ -4,9 +4,6 @@ from config import *
 
 URL = GoogleSearchUrl
 
-
-
-
 # Mocking of Google search API getting with results
 def test_google_search_API_with_results(monkeypatch):
 

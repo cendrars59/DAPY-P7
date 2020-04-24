@@ -17,14 +17,13 @@ dataset_missing_ad = {
         }
     }
 
-# Test parser in nominal way
+# Test parser when the keyword adresse is missing
 def test_parser_error_missing_add():
     reply = parser.request_parser(dataset_missing_ad)
     assert reply["messages"]["raw_message"] == "bbbbbbb  arc de triomphe ? rehghrgrghhreg"
     assert reply["messages"]["parsed_message"] == ""
     assert reply["status"] == "NOK"
     assert reply["errors"]["parser"] is True
-
 
 dataset_missing_question = {
         "messages": {
@@ -42,8 +41,7 @@ dataset_missing_question = {
         }
     }
 
-
-# Test parser in nominal way
+# Test parser when ? is missing
 def test_parser_error_missing_question():
     reply = parser.request_parser(dataset_missing_question)
     assert reply["messages"]["raw_message"] == "bbbbbbb adresse arc de triomphe  rehghrgrghhreg"
