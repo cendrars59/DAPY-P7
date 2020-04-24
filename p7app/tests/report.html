@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8"/>
     <title>Test Report</title>
-    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
-  <body onLoad="init()">
-    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onLoad="init()">
+<script>/* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
@@ -80,11 +81,11 @@ function add_collapse() {
     var resulttable = find('table#results-table');
     var showhideall = document.createElement("p");
     showhideall.innerHTML = '<a href="javascript:show_all_extras()">Show all details</a> / ' +
-                            '<a href="javascript:hide_all_extras()">Hide all details</a>';
+        '<a href="javascript:hide_all_extras()">Hide all details</a>';
     resulttable.parentElement.insertBefore(showhideall, resulttable);
 
     // Add show/hide link to each result
-    find_all('.col-result').forEach(function(elem) {
+    find_all('.col-result').forEach(function (elem) {
         var collapsed = get_query_parameter('collapsed') || 'Passed';
         var extras = elem.parentNode.nextElementSibling;
         var expandcollapse = document.createElement("span");
@@ -98,7 +99,7 @@ function add_collapse() {
         }
         elem.appendChild(expandcollapse);
 
-        elem.addEventListener("click", function(event) {
+        elem.addEventListener("click", function (event) {
             if (event.currentTarget.parentNode.nextElementSibling.classList.contains("collapsed")) {
                 show_extras(event.currentTarget);
             } else {
@@ -113,7 +114,7 @@ function get_query_parameter(name) {
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-function init () {
+function init() {
     reset_sort_headers();
 
     add_collapse();
@@ -122,11 +123,11 @@ function init () {
 
     sort_column(find('.initial-sort'));
 
-    find_all('.sortable').forEach(function(elem) {
+    find_all('.sortable').forEach(function (elem) {
         elem.addEventListener("click",
-                              function(event) {
-                                  sort_column(elem);
-                              }, false)
+            function (event) {
+                sort_column(elem);
+            }, false)
     });
 
 };
@@ -143,18 +144,18 @@ function sort_table(clicked, key_func) {
     var parent = document.createElement("table");
     parent.id = "results-table";
     parent.appendChild(thead);
-    sorted_rows.forEach(function(elem) {
+    sorted_rows.forEach(function (elem) {
         parent.appendChild(elem);
     });
     document.getElementsByTagName("BODY")[0].appendChild(parent);
 }
 
 function sort(items, key_func, reversed) {
-    var sort_array = items.map(function(item, i) {
+    var sort_array = items.map(function (item, i) {
         return [key_func(item), i];
     });
 
-    sort_array.sort(function(a, b) {
+    sort_array.sort(function (a, b) {
         var key_a = a[0];
         var key_b = b[0];
 
@@ -167,37 +168,37 @@ function sort(items, key_func, reversed) {
         }
     });
 
-    return sort_array.map(function(item) {
+    return sort_array.map(function (item) {
         var index = item[1];
         return items[index];
     });
 }
 
 function key_alpha(col_index) {
-    return function(elem) {
+    return function (elem) {
         return elem.childNodes[1].childNodes[col_index].firstChild.data.toLowerCase();
     };
 }
 
 function key_num(col_index) {
-    return function(elem) {
+    return function (elem) {
         return parseFloat(elem.childNodes[1].childNodes[col_index].firstChild.data);
     };
 }
 
 function key_result(col_index) {
-    return function(elem) {
+    return function (elem) {
         var strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
-                       'Skipped', 'Passed'];
+            'Skipped', 'Passed'];
         return strings.indexOf(elem.childNodes[1].childNodes[col_index].firstChild.data);
     };
 }
 
 function reset_sort_headers() {
-    find_all('.sort-icon').forEach(function(elem) {
+    find_all('.sort-icon').forEach(function (elem) {
         elem.parentNode.removeChild(elem);
     });
-    find_all('.sortable').forEach(function(elem) {
+    find_all('.sortable').forEach(function (elem) {
         var icon = document.createElement("div");
         icon.className = "sort-icon";
         icon.textContent = "vvv";
@@ -223,7 +224,7 @@ function toggle_sort_states(elem) {
 }
 
 function is_all_rows_hidden(value) {
-  return value.hidden == false;
+    return value.hidden == false;
 }
 
 function filter_table(elem) {
@@ -232,7 +233,7 @@ function filter_table(elem) {
     class_outcome = outcome + " results-table-row";
     var outcome_rows = document.getElementsByClassName(class_outcome);
 
-    for(var i = 0; i < outcome_rows.length; i++){
+    for (var i = 0; i < outcome_rows.length; i++) {
         outcome_rows[i].hidden = !elem.checked;
     }
 
@@ -242,73 +243,127 @@ function filter_table(elem) {
     not_found_message.hidden = !all_rows_hidden;
 }
 </script>
-    <h1>report.html</h1>
-    <p>Report generated on 08-Apr-2020 at 13:36:58 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
-    <h2>Environment</h2>
-    <table id="environment">
-      <tr>
+<h1>report.html</h1>
+<p>Report generated on 08-Apr-2020 at 13:36:58 by <a
+        href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1
+</p>
+<h2>Environment</h2>
+<table id="environment">
+    <tr>
         <td>Packages</td>
-        <td>{"pluggy": "0.13.1", "py": "1.8.1", "pytest": "5.4.1"}</td></tr>
-      <tr>
+        <td>{"pluggy": "0.13.1", "py": "1.8.1", "pytest": "5.4.1"}</td>
+    </tr>
+    <tr>
         <td>Platform</td>
-        <td>Linux-5.0.0-32-generic-x86_64-with-LinuxMint-19.3-tricia</td></tr>
-      <tr>
+        <td>Linux-5.0.0-32-generic-x86_64-with-LinuxMint-19.3-tricia</td>
+    </tr>
+    <tr>
         <td>Plugins</td>
-        <td>{"html": "2.1.1", "metadata": "1.8.0"}</td></tr>
-      <tr>
+        <td>{"html": "2.1.1", "metadata": "1.8.0"}</td>
+    </tr>
+    <tr>
         <td>Python</td>
-        <td>3.6.9</td></tr></table>
-    <h2>Summary</h2>
-    <p>1 tests ran in 9.54 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
-    <h2>Results</h2>
-    <table id="results-table">
-      <thead id="results-table-head">
-        <tr>
-          <th class="sortable result initial-sort" col="result">Result</th>
-          <th class="sortable" col="name">Test</th>
-          <th class="sortable numeric" col="duration">Duration</th>
-          <th>Links</th></tr>
-        <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">tests_suite/nominal/test_user_nominal.py::TestUser::test_user_nominal</td>
-          <td class="col-duration">9.37</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/> * Serving Flask app &quot;p7app.views&quot; (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: on
-<br/> ------------------------------Captured stderr call------------------------------ <br/>Process Process-1:
-Traceback (most recent call last):
-  File &quot;/usr/lib/python3.6/multiprocessing/process.py&quot;, line 258, in _bootstrap
-    self.run()
-  File &quot;/usr/lib/python3.6/multiprocessing/process.py&quot;, line 93, in run
-    self._target(*self._args, **self._kwargs)
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/flask_testing/utils.py&quot;, line 480, in worker
-    app.run(port=port, use_reloader=False)
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/flask/app.py&quot;, line 990, in run
-    run_simple(host, port, self, **options)
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;, line 1052, in run_simple
-    inner()
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;, line 1005, in inner
-    fd=fd,
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;, line 848, in make_server
-    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;, line 740, in __init__
-    HTTPServer.__init__(self, server_address, handler)
-  File &quot;/usr/lib/python3.6/socketserver.py&quot;, line 456, in __init__
-    self.server_bind()
-  File &quot;/usr/lib/python3.6/http/server.py&quot;, line 136, in server_bind
-    socketserver.TCPServer.server_bind(self)
-  File &quot;/home/cyril/.local/lib/python3.6/site-packages/flask_testing/utils.py&quot;, line 470, in socket_bind_wrapper
-    ret = original_socket_bind(self)
-  File &quot;/usr/lib/python3.6/socketserver.py&quot;, line 470, in server_bind
-    self.socket.bind(self.server_address)
-OSError: [Errno 98] Address already in use
-<br/></div></td></tr></tbody></table></body></html>
+        <td>3.6.9</td>
+    </tr>
+</table>
+<h2>Summary</h2>
+<p>1 tests ran in 9.54 seconds. </p>
+<p class="filter" hidden="true">(Un)check the boxes to filter the results.</p>
+<input checked="true" class="filter" data-test-result="passed" hidden="true"
+       name="filter_checkbox" onChange="filter_table(this)"
+       type="checkbox"/><span class="passed">1 passed</span>, <input
+        checked="true" class="filter" data-test-result="skipped"
+        disabled="true" hidden="true" name="filter_checkbox"
+        onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>,
+<input checked="true" class="filter" data-test-result="failed" disabled="true"
+       hidden="true" name="filter_checkbox" onChange="filter_table(this)"
+       type="checkbox"/><span class="failed">0 failed</span>, <input
+        checked="true" class="filter" data-test-result="error" disabled="true"
+        hidden="true" name="filter_checkbox" onChange="filter_table(this)"
+        type="checkbox"/><span class="error">0 errors</span>, <input
+        checked="true" class="filter" data-test-result="xfailed"
+        disabled="true" hidden="true" name="filter_checkbox"
+        onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>,
+<input checked="true" class="filter" data-test-result="xpassed" disabled="true"
+       hidden="true" name="filter_checkbox" onChange="filter_table(this)"
+       type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+<h2>Results</h2>
+<table id="results-table">
+    <thead id="results-table-head">
+    <tr>
+        <th class="sortable result initial-sort" col="result">Result</th>
+        <th class="sortable" col="name">Test</th>
+        <th class="sortable numeric" col="duration">Duration</th>
+        <th>Links</th>
+    </tr>
+    <tr hidden="true" id="not-found-message">
+        <th colspan="4">No results found. Try to check the filters</th>
+    </tr>
+    </thead>
+    <tbody class="passed results-table-row">
+    <tr>
+        <td class="col-result">Passed</td>
+        <td class="col-name">
+            tests_suite/nominal/test_user_nominal.py::TestUser::test_user_nominal
+        </td>
+        <td class="col-duration">9.37</td>
+        <td class="col-links"></td>
+    </tr>
+    <tr>
+        <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout
+                call------------------------------ <br/> * Serving Flask app
+                &quot;p7app.views&quot; (lazy loading)
+                * Environment: production
+                WARNING: This is a development server. Do not use it in a
+                production deployment.
+                Use a production WSGI server instead.
+                * Debug mode: on
+                <br/> ------------------------------Captured stderr
+                call------------------------------ <br/>Process Process-1:
+                Traceback (most recent call last):
+                File &quot;/usr/lib/python3.6/multiprocessing/process.py&quot;,
+                line 258, in _bootstrap
+                self.run()
+                File &quot;/usr/lib/python3.6/multiprocessing/process.py&quot;,
+                line 93, in run
+                self._target(*self._args, **self._kwargs)
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/flask_testing/utils.py&quot;,
+                line 480, in worker
+                app.run(port=port, use_reloader=False)
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/flask/app.py&quot;,
+                line 990, in run
+                run_simple(host, port, self, **options)
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;,
+                line 1052, in run_simple
+                inner()
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;,
+                line 1005, in inner
+                fd=fd,
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;,
+                line 848, in make_server
+                host, port, app, request_handler, passthrough_errors,
+                ssl_context, fd=fd
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/werkzeug/serving.py&quot;,
+                line 740, in __init__
+                HTTPServer.__init__(self, server_address, handler)
+                File &quot;/usr/lib/python3.6/socketserver.py&quot;, line 456,
+                in __init__
+                self.server_bind()
+                File &quot;/usr/lib/python3.6/http/server.py&quot;, line 136,
+                in server_bind
+                socketserver.TCPServer.server_bind(self)
+                File &quot;/home/cyril/.local/lib/python3.6/site-packages/flask_testing/utils.py&quot;,
+                line 470, in socket_bind_wrapper
+                ret = original_socket_bind(self)
+                File &quot;/usr/lib/python3.6/socketserver.py&quot;, line 470,
+                in server_bind
+                self.socket.bind(self.server_address)
+                OSError: [Errno 98] Address already in use
+                <br/></div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

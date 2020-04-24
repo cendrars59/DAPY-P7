@@ -1,8 +1,8 @@
 # coding: utf8
 from flask import Flask, render_template, jsonify, request
-from .utils.google import *
-from .utils.parser import *
-from .utils.wikimedia import *
+from .utils.google import get_data_from_google
+from .utils.parser import request_parser
+from .utils.wikimedia import get_data_from_wiki_media
 
 app = Flask(__name__)
 

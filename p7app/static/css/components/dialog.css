@@ -7,11 +7,12 @@
     position: center;
 
 }
+
 #map {
-   display: block;
-   height: 400px;
-   max-height: 400px;
-   width: 100%;
+    display: block;
+    height: 400px;
+    max-height: 400px;
+    width: 100%;
 }
 
 
