@@ -24,7 +24,7 @@ class UserRequest:
 
     def return_answer_from_query(self):
         """
-        Function returning answer populated after the differents APIs calls 
+        Function returning answer populated after the differents APIs calls
         :return:
         """
         request_parser(self.answer)
