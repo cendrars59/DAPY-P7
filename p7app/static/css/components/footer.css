@@ -1,20 +1,40 @@
 #div-footer {
-    height: 10%;
+    margin-top: 1vh;
+    height: 6vh;
     background: #7452EB;
     color: white;
-    position: absolute;
     bottom: 0;
-    width: 100%;
-    padding-right: 20%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    border: solid black;
+}
+
+#div-owner {
+    margin-top: 1vh;
+    height: 4vh;
+    padding-left: 2vw;
+}
+#div-icons {
+    margin-top: 1vh;
+    height: 4vh;
+    padding-left: 2vw;
+    justify-content: space-between;
+}
+
+.icon {
+    color: white;
+    line-height: 5vh;
+    font-size: 4vh;
 }
 
 #owner {
-    margin-left: 10%;
+    color: white;
+    line-height: 5vh;
+    font-size: 2vh;
 }
 
+@media only screen and (max-width: 992px) {
 
+    #div-owner {
+      display: none;
+    }
 
+}

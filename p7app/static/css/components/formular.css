@@ -1,11 +1,15 @@
 #div-formular {
-    height: 30%;
-    padding-top: 2%;
+    height: 28vh;
+    border: solid black;
 }
 
 
 #user_request {
-    padding-top: 1%;
+    min-width: 90%;
+    height: 80%;
+    min-height: 80%;
+    border: #7452EB solid;
+    margin:0 auto;
 }
 
 #formular {
@@ -14,4 +18,18 @@
 
 #div-submit {
     padding-top: 2%;
+}
+
+#div-intro {
+    height: 5vh;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+
+    #div-intro {
+      display: none;
+    }
+
 }
