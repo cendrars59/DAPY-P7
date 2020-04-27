@@ -14,102 +14,93 @@
 
 </head>
 <body>
-<div class="container">
-    <div class="row card" id="1">
-        <div id="div-header" class="col-lg-12">
-            <div class="row">
-                <div id="logo" class="col-lg-4">
-                    <a href="/home">
-                        <h1><i id="logo-icon"
-                               class="fas fa-user-astronaut font-color"></i>
-                        </h1>
-                    </a>
-                </div>
-                <div id="punchline" class="col-lg-8">
-                    <h1>Vers l'infini et au delà</h1>
-                </div>
-            </div>
-        </div> <!--end div header-->
-    </div> <!--end div row-->
-    <span></span>
-    <div id="2" class="row card">
-        <div id="div-dialog" class="col-lg-12">
-            <div id="21" class="row">
-                <div class="col-lg-6" id="dialog">
-
-                </div>
-                <div id="map" class="col-lg-6">
-
-                </div>
-            </div>
-
-        </div> <!--end div dialog-->
-    </div>
-    <span></span>
-    <div class="row">
-        <div class="col-lg-12">
-            <h3>Que voudrais tu savoir ?</h3>
+    <div id="div-header" class="card">
+        <div id="logo">
+            <a href="/home">
+                <h1>
+                    <i id="logo-icon" class="fas fa-user-astronaut font-color"></i>
+                </h1>
+            </a>
         </div>
+        <div id="punchline" class="to-remove">
+            <h1>Vers l'infini et au delà</h1>
+        </div>
+
     </div>
-    <span></span>
-    <div class="row card" id="3">
-        <div id="div-formular" class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-6">
-                    <form id="formular">
-                        <div class="form-group">
-                                <textarea class="" id="user_request"
+    <div class="container">
+        <div id="div-dialog" class="row card">
+            <div id="dialog" class="col-xs-12 col-md-6" >
+
+            </div>
+            <div id="map" class="col-xs-12 col-md-6">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 to-remove">
+                <p>Que voudrais tu savoir ?</p>
+            </div>
+        </div>
+        <div class="row card" id="div-formular">
+            <div class="col-xs-12">
+                <form id="formular">
+                    <div class="form-group">
+                        <textarea class="" id="user_request"
                                           placeholder="Entre ta question ici"
                                           rows="8"
                                           name="user_request_name"> </textarea>
-                        </div>
-                        <input type="submit" id="submit"
-                               class="btn btn-submit">
-                    </form>
+                    </div>
+                    <input type="submit" id="submit" class="btn btn-submit">
+                </form>
+                <div id="div-submit">
                 </div>
-                <div class="col-lg-2" id="div-submit">
+            </div>
 
-                </div>
+        </div>
+        <span></span>
+
+    </div> <!--end div container-->
+    <div class="card" id="div-footer">
+        <div id="owner" class="to-remove">
+                <h3>Cyril Leroux</h3>
+        </div>
+        <div id="icons">
+            <div id="github">
+                        <a href="https://github.com/cendrars59/DAPY-P7">
+                            <i class="fab fa-github-square icon">
+
+                            </i>
+                        </a>
+                    </div>
+            <div id="twitter">
+                <a href="https://twitter.com/Cendrars_59">
+                            <i class="fab fa-twitter-square icon">
+
+                            </i>
+                        </a>
+            </div>
+            <div id="linkedin">
+                <a href="https://www.linkedin.com/in/cyleroux/">
+                    <i class="fab fa-linkedin icon">
+
+                    </i>
+                </a>
             </div>
         </div>
     </div>
-    <div></div>
-    <div class="row card" id="4">
-        <div id="div-footer" class="col-lg-12">
-            <div class="row">
-                <div id="owner" class="col-lg-4">
-                    <h3>Cyril Leroux</h3>
-                </div>
-                <div id="github" class="col-lg-2">
-                    <a href="https://github.com/cendrars59/DAPY-P7">
-                        <i class="fab fa-github-square icon"></i>
-                    </a>
-                </div>
-                <div id="twitter" class="col-lg-2">
-                    <a href="https://twitter.com/Cendrars_59">
-                        <i class="fab fa-twitter-square icon"></i>
-                    </a>
-                </div>
-                <div id="linkedin" class="col-lg-2">
-                    <a href="https://www.linkedin.com/in/cyleroux/">
-                        <i class="fab fa-linkedin icon"></i>
-                    </a>
-                </div>
-            </div>
-        </div> <!--end div footer-->
-    </div> <!--end div row-->
-</div> <!--end div container-->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMeLv2tsMhjNL6MeX_K8zDqUSbsIRusLk"></script>
-<script src="{{ url_for('static', filename='js/index.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMeLv2tsMhjNL6MeX_K8zDqUSbsIRusLk"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
