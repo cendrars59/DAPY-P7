@@ -39,4 +39,26 @@
 }
 
 
+@media only screen and (max-width: 767px) {
+
+    #dialog {
+    margin-top: 2vh;
+    height: 20vh;
+    min-height: 20vh;
+
+    }
+
+    #map {
+    margin-top: 2vh;
+    min-height: 20vh;
+    height: 20vh;
+    }
+
+    #div-dialog {
+    height: 55vh;
+    }
+
+}
+
+
 

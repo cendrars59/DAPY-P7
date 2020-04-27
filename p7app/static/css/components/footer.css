@@ -4,7 +4,6 @@
     background: #7452EB;
     color: white;
     bottom: 0;
-    border: solid black;
 }
 
 #div-owner {
@@ -14,15 +13,15 @@
 }
 #div-icons {
     margin-top: 1vh;
-    height: 4vh;
-    padding-left: 2vw;
-    justify-content: space-between;
+    height: 5vh;
 }
+
 
 .icon {
     color: white;
-    line-height: 5vh;
+    line-height: 4vh;
     font-size: 4vh;
+
 }
 
 #owner {
@@ -31,6 +30,7 @@
     font-size: 2vh;
 }
 
+/*Deleting including the div owner if  */
 @media only screen and (max-width: 992px) {
 
     #div-owner {

@@ -1,11 +1,12 @@
 .btn-submit {
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
     font-weight: bold;
     font-family: "Pacifico", "Helvetica", "sans-serif";
     color: white;
     border: none;
     border-radius: 50%;
     background: #7452EB;
+    text-align: center;
 
 }
