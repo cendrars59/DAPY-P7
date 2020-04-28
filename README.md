@@ -101,17 +101,15 @@ project
 The solution has been developed from 3.7.5 Python version -> see [Release note](https://www.python.org/downloads/release/python-375/)
 
 ### 2.1.2 Flask 
-In order to access to database from installation. You have to set up the Python MySQL connector 8.0.18. Please find the link to download [here](https://dev.mysql.com/downloads/connector/python/)
+The solution has been developped on top of Flask 1.1.2 version -> see  [here](https://flask.palletsprojects.com/en/1.1.x/)
 
-### 2.1.3 Pytest
+### 2.1.3 Requests 
+In order to manage call to API and answer the librairy requests version 2.23.0 has been used -> see  [here](https://2.python-requests.org/en/master/)
 
-The setting of the OpenFoodFacts is required for the application usage. You can find the setting procedure for Python [here](https://github.com/openfoodfacts/openfoodfacts-python)
+### 2.1.4 Pytest
+Into the project, units tests have been provided to execute. The same have been executed by usin PYTest librairy. see -> [here](https://docs.pytest.org/en/latest/)
 See payload configuration section.
 
-
-# 3. Project design  
-
-In this section, we follow the different stages (features) to complete in order to achieve the solution.  
 
  
 
