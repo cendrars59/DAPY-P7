@@ -1,4 +1,5 @@
 # coding: utf8
+import re
 
 
 def request_parser(incoming_message):
@@ -7,30 +8,26 @@ def request_parser(incoming_message):
     Is considered as address any list of string between the string address
      and ?
     :param incoming_message: of type dictionary
-    :return: a string value
+    :return: incoming_message
     """
-    print(incoming_message)
-    words_in_incoming = incoming_message["messages"]["raw_message"].lower() \
-        .split(" ")
+
+    # Regex searching the following pattern. The location est between
+    # the words adresse or où se trouve and ?
+    regex = "(?<=adresse)[\w\s]{1,}[^\?]|(?<=où se trouve)[\w\s]{1,}[^\?]"
+    words_in_incoming = incoming_message["messages"]["raw_message"].lower(). \
+        replace("d'", "").replace("l'", "")
     print(words_in_incoming)
     try:
-        address_index = words_in_incoming.index("adresse")
-        temp_address = words_in_incoming[address_index + 1:]
-        try:
-            question_mark_index = temp_address.index("?")
-            address_list = temp_address[:question_mark_index]
-            # The ? can not be just after the word adresse
-            if question_mark_index > address_index + 1:
-                for word in address_list:
-                    incoming_message["messages"]["parsed_message"] += word + \
-                                                                      " "
-                    incoming_message["status"] = "OK"
-            else:
-                incoming_message["status"] = 'NOK'
-                incoming_message["errors"]["parser"] = True
-        except ValueError:
+        matching = re.search(r'{0}'.format(regex), words_in_incoming)
+        if matching is not None:
+            incoming_message["messages"]["parsed_message"] = matching.group(0)
+            incoming_message["status"] = "OK"
+
+        # No match found according pattern
+        else:
             incoming_message["status"] = 'NOK'
             incoming_message["errors"]["parser"] = True
+    # The pattern can not be applied
     except ValueError:
         incoming_message["status"] = 'NOK'
         incoming_message["errors"]["parser"] = True
